@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BCA51FA9-D242-4C66-8CFE-EF8BBB2D84EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Powerdiary.Domain</RootNamespace>
+    <AssemblyName>Powerdiary.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aggregates\ChatRoomCommandHandlers.cs" />
+    <Compile Include="Aggregates\ChatRoom.cs" />
+    <Compile Include="IReadModelFacade.cs" />
+    <Compile Include="Projections\ChatsListView.cs" />
+    <Compile Include="Projections\EventsWholeHistory\EventsWholeHistoryModel.cs" />
+    <Compile Include="Projections\EventsWholeHistory\EventsWholeHistoryProjection.cs" />
+    <Compile Include="Projections\EventsWholeHistory\EventsWholeHistoryView.cs" />
+    <Compile Include="Projections\EventsWholeHistory\InMemoryMessageStore.cs" />
+    <Compile Include="Projections\EventsCountByOneMinute\EventsCountByOneMinuteModel.cs" />
+    <Compile Include="Projections\EventsCountByOneMinute\EventsCountByOneMinuteView.cs" />
+    <Compile Include="Projections\EventsCountByOneMinute\InMemoryMinuteStore.cs" />
+    <Compile Include="Projections\EventsCountByOneMinute\EventsCountByOneMinuteProjection.cs" />
+    <Compile Include="Projections\EventsCountDetailedByOneMinute\EventsCountDetailedByOneMinuteView.cs" />
+    <Compile Include="Projections\EventsCountDetailedByOneMinute\EventsCountDetailedByOneMinuteViewModel.cs" />
+    <Compile Include="Projections\EventsCountExtendedByFourMinute\EventsCountExtendedByFourMinuteModel.cs" />
+    <Compile Include="Projections\EventsCountExtendedByFourMinute\EventsCountExtendedByFourMinuteView.cs" />
+    <Compile Include="Projections\EventsCountExtendedByFourMinute\InMemoryFourMinuteStore.cs" />
+    <Compile Include="Projections\EventsCountExtendedByFourMinute\EventsCountExtendedByFourMinuteProjection.cs" />
+    <Compile Include="Projections\EventsCountDetailedByOneMinute\InMemoryMinuteStore.cs" />
+    <Compile Include="Projections\EventsCountDetailedByOneMinute\EventsCountDetailedByOneMinuteProjection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RreadModelFacade.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Powerdiary.Contracts\Powerdiary.Contracts.csproj">
+      <Project>{14301327-eb68-419b-bfa3-9634b3ae4b7a}</Project>
+      <Name>Powerdiary.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\powerdiary.infrastructure\Powerdiary.Infrastructure.csproj">
+      <Project>{e382874f-1bef-44f3-baf4-f7d273e73336}</Project>
+      <Name>Powerdiary.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Powerdiary.Storage\Powerdiary.Storage.csproj">
+      <Project>{89cbab59-f3e5-47e3-a85c-22492c6e5fe4}</Project>
+      <Name>Powerdiary.Storage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Powerdiary.Domain", "powerdiary.domain\Powerdiary.Domain.csproj", "{BCA51FA9-D242-4C66-8CFE-EF8BBB2D84EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Powerdiary.Infrastructure", "powerdiary.infrastructure\Powerdiary.Infrastructure.csproj", "{E382874F-1BEF-44F3-BAF4-F7D273E73336}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Powerdiary.Api", "Powerdiary.Api\Powerdiary.Api.csproj", "{26A40C39-EF45-4F6F-82FC-01B6D964CCBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Powerdiary.Storage.IntegrationTests", "Powerdiary.Infrastructure.IntegrationTests\Powerdiary.Storage.IntegrationTests.csproj", "{DE7F3499-8978-4EA4-B5A6-5EB6D56264ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Powerdiary.Storage", "Powerdiary.Storage\Powerdiary.Storage.csproj", "{89CBAB59-F3E5-47E3-A85C-22492C6E5FE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Powerdiary.Contracts", "Powerdiary.Contracts\Powerdiary.Contracts.csproj", "{14301327-EB68-419B-BFA3-9634B3AE4B7A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCA51FA9-D242-4C66-8CFE-EF8BBB2D84EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCA51FA9-D242-4C66-8CFE-EF8BBB2D84EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCA51FA9-D242-4C66-8CFE-EF8BBB2D84EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCA51FA9-D242-4C66-8CFE-EF8BBB2D84EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E382874F-1BEF-44F3-BAF4-F7D273E73336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E382874F-1BEF-44F3-BAF4-F7D273E73336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E382874F-1BEF-44F3-BAF4-F7D273E73336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E382874F-1BEF-44F3-BAF4-F7D273E73336}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26A40C39-EF45-4F6F-82FC-01B6D964CCBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26A40C39-EF45-4F6F-82FC-01B6D964CCBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26A40C39-EF45-4F6F-82FC-01B6D964CCBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26A40C39-EF45-4F6F-82FC-01B6D964CCBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE7F3499-8978-4EA4-B5A6-5EB6D56264ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE7F3499-8978-4EA4-B5A6-5EB6D56264ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE7F3499-8978-4EA4-B5A6-5EB6D56264ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE7F3499-8978-4EA4-B5A6-5EB6D56264ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89CBAB59-F3E5-47E3-A85C-22492C6E5FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89CBAB59-F3E5-47E3-A85C-22492C6E5FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89CBAB59-F3E5-47E3-A85C-22492C6E5FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89CBAB59-F3E5-47E3-A85C-22492C6E5FE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14301327-EB68-419B-BFA3-9634B3AE4B7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14301327-EB68-419B-BFA3-9634B3AE4B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14301327-EB68-419B-BFA3-9634B3AE4B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14301327-EB68-419B-BFA3-9634B3AE4B7A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D90009D-B24D-40DC-BC4F-6483FA56203D}
+	EndGlobalSection
+EndGlobal
