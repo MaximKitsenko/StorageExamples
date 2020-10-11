@@ -8,14 +8,14 @@ Theere are 2 storages represented in `Powerdiary.Storage`. This is where do we s
 
 Bucket-based store, where bucket represented by `key` which is `DateTime`. The size of the bucket can be adjusted by choosing appropriate key from `Powerdiary.Storage.TimeBaseStore.Keys`.
 
-**The main idea**
+#### The main idea
 
 - precalculate data before we need it, to avoid (or at least reduce) calculations when we need to read data;
-- since multiple events with the same timestamp are possible - do not store the events, but store system state at some point of time.
+- since multiple events with the same timestamp are possible - do not store events, but store system state at some point of time (pre-aggregated data).
 
 ### Bucket store `Powerdiary.Storage.BucketBaseStore`. [Faster writes than reads]
 
-**The main idea**
+#### The main idea
 
 - store events in chronological order, use this storage as source of truth for calculating `Powerdiary.Storage.TimeBaseStore`;
 - use BinarySearch `[O(log n)]` for searching events.
