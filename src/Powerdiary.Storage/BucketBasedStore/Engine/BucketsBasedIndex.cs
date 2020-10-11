@@ -17,14 +17,14 @@ namespace Powerdiary.Storage.BucketBasedStore.Engine
 
 		public void Add(DateTime key, TMessage msg)
 		{
-			var bucketKey = key.ToBucketKey();
+			var bucketKey = key.ToDayBucketKey();
 			var bucket = _buckets.GetOrAdd(bucketKey, _bucketFactory.CreateBucket(bucketKey) );
 			bucket.Add(key, msg);
 		}
 
 		public void Remove(DateTime key)
 		{
-			if (_buckets.TryGetValue(key.ToBucketKey(), out var bucket))
+			if (_buckets.TryGetValue(key.ToDayBucketKey(), out var bucket))
 			{
 				bucket.TryRemove(key);
 			}

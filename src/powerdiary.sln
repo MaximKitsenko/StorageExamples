@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Powerdiary.Infrastructure",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Powerdiary.Api", "Powerdiary.Api\Powerdiary.Api.csproj", "{26A40C39-EF45-4F6F-82FC-01B6D964CCBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Powerdiary.Storage.IntegrationTests", "Powerdiary.Infrastructure.IntegrationTests\Powerdiary.Storage.IntegrationTests.csproj", "{DE7F3499-8978-4EA4-B5A6-5EB6D56264ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Powerdiary.Storage.Tests", "Powerdiary.Infrastructure.IntegrationTests\Powerdiary.Storage.Tests.csproj", "{DE7F3499-8978-4EA4-B5A6-5EB6D56264ED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Powerdiary.Storage", "Powerdiary.Storage\Powerdiary.Storage.csproj", "{89CBAB59-F3E5-47E3-A85C-22492C6E5FE4}"
 EndProject

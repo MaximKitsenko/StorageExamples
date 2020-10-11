@@ -8,8 +8,8 @@
     <ProjectGuid>{DE7F3499-8978-4EA4-B5A6-5EB6D56264ED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Powerdiary.Storage.IntegrationTests</RootNamespace>
-    <AssemblyName>Powerdiary.Storage.IntegrationTests</AssemblyName>
+    <RootNamespace>Powerdiary.Storage.Tests</RootNamespace>
+    <AssemblyName>Powerdiary.Storage.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BucketBasedStore\Engine\ConcurrentBucketTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatisticsStore\Keys\MinuteKeyTest.cs" />
   </ItemGroup>
@@ -63,6 +64,7 @@
       <Name>Powerdiary.Storage</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

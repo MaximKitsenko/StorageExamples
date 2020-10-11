@@ -22,7 +22,11 @@ namespace Powerdiary.Storage.BucketBasedStore.Engine
 
 		public void Add(DateTime key, TMessage msg)
 		{
-			Index.AddOrUpdate(key, new List<TMessage>() {msg}, (k, v) => v.AddReturn(msg));
+			var bucketKey = key.ToDayBucketKey();
+			if (this.BucketId == bucketKey)
+			{
+				Index.AddOrUpdate(key, new List<TMessage>() { msg }, (k, v) => v.AddReturn(msg));
+			}
 		}
 
 		public bool TryRemove(DateTime key)
@@ -37,8 +41,8 @@ namespace Powerdiary.Storage.BucketBasedStore.Engine
 
 		public IEnumerable<TMessage> GetMessages(DateTime startDate, DateTime endDate)
 		{
-			var firstBucket = startDate.ToBucketKey();
-			var lastBucketKey = endDate.ToBucketKey();
+			var firstBucket = startDate.ToDayBucketKey();
+			var lastBucketKey = endDate.ToDayBucketKey();
 			var result = Enumerable.Empty<TMessage>();
 
 			if (this.BucketId >= firstBucket && this.BucketId <= lastBucketKey || startDate >= endDate)
@@ -52,8 +56,8 @@ namespace Powerdiary.Storage.BucketBasedStore.Engine
 
 		public IEnumerable<MessageWithTimeKey<TMessage>> GetMessagesWithTime(DateTime startDate, DateTime endDate)
 		{
-			var firstBucket = startDate.ToBucketKey();
-			var lastBucketKey = endDate.ToBucketKey();
+			var firstBucket = startDate.ToDayBucketKey();
+			var lastBucketKey = endDate.ToDayBucketKey();
 			var result = Enumerable.Empty<MessageWithTimeKey<TMessage>>();
 
 			if (this.BucketId >= firstBucket && this.BucketId <= lastBucketKey || startDate >= endDate)
@@ -71,8 +75,8 @@ namespace Powerdiary.Storage.BucketBasedStore.Engine
 			out Func<KeyValuePair<DateTime, List<TMessage>>, bool> filter
 		)
 		{
-			var firstBucket = startDate.ToBucketKey();
-			var lastBucketKey = endDate.ToBucketKey();
+			var firstBucket = startDate.ToDayBucketKey();
+			var lastBucketKey = endDate.ToDayBucketKey();
 
 			if (this.BucketId > firstBucket) // no need to filter by startDate
 			{

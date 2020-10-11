@@ -14,10 +14,15 @@ namespace Powerdiary.Storage.BucketBasedStore.Engine
 			return src.TryGetValue(key, out var value) ? value : default(TV);
 		}
 
-		public static long ToBucketKey(this DateTime dateTime)
+		public static long ToDayBucketKey(this DateTime dateTime)
 		{
 			var dateTimeUtc = dateTime.ToUniversalTime();
 			return new DateTime(dateTimeUtc.Year, dateTimeUtc.Month, dateTimeUtc.Day, 0, 0, 0, DateTimeKind.Utc).Ticks;
+		}
+
+		public static KeyValuePair<TKey, TValue> CreateKeyValuePair<TKey, TValue>(TKey key, TValue value)
+		{
+			return new KeyValuePair<TKey, TValue>(key,value);
 		}
 
 		public static IEnumerable<long> GetBucketKeysRange(this DateTime dateTimeStart, DateTime dateTimeEnd)
@@ -27,8 +32,8 @@ namespace Powerdiary.Storage.BucketBasedStore.Engine
 			//	yield return new List<long>();
 			//}
 
-			var dt1 = dateTimeStart.ToUniversalTime().ToBucketKey();
-			var dt2 = dateTimeEnd.ToUniversalTime().ToBucketKey();
+			var dt1 = dateTimeStart.ToUniversalTime().ToDayBucketKey();
+			var dt2 = dateTimeEnd.ToUniversalTime().ToDayBucketKey();
 
 			var keysCount = ((dt2 - dt1) / TicksBetweenDays)+1;
 
